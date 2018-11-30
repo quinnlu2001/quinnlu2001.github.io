@@ -1,0 +1,52 @@
+h1{
+    color: rgb(4, 39, 68);
+    background-color: rgb(188, 197, 207);
+    margin: 40px;
+    margin-top: 60px;
+    padding: 25px;
+    text-align: center;
+
+}
+
+body {
+    background-color: rgb(226, 230, 235)
+
+}
+
+nav ul{
+    position :fixed;
+    list-style-type: none;
+    margin :0;
+    padding :0;
+    top :0;
+    left :0;
+    width :100%;
+    background-color: rgb(112, 132, 155);
+
+}
+
+nav ul li{
+    float: left;
+
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px;
+    background-color: rgb(112, 132, 155);
+    text-decoration: none;
+
+}
+
+nav ul li a:hover {
+    background-color: cornsilk
+}
+
+img{
+    height: 500px;
+    vertical-align: middle;
+
+}
+
+
+
