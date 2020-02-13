@@ -20,7 +20,7 @@ function draw() {
   background(220);
   // fill("red")
   // rect(mouseX,mouseY,100,100)
-  image(Pic, mouseX, mouseY, scalar*Pic.width, scalar*Pic.height)
+  image(Pic, mouseX, mouseY, scalar*Pic.width, scalar*Pic.height);
 }
 
 function mouseWheel(event){
