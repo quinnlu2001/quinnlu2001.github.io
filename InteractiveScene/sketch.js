@@ -16,8 +16,6 @@ function preload(){
   bg = loadImage("assets/blue.png");
 }
 
-
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background("blue");
@@ -33,12 +31,16 @@ function draw() {
   
   x += dx;
 
-  if (mouseX > x){
+  if (mouseX > x && mouseX < 1200){
     dx = 5;
   }
 
-  else if (mouseX < x){
+  else if (mouseX < x && mouseX > 400){
     dx = -5;
+  }
+
+  else if (mouseX === x){
+    dx = 0;
   }
 
 }
