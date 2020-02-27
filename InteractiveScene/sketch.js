@@ -6,10 +6,10 @@
 // - describe what you did to take this project "above and beyond"
 
 let canoe;
-let bg;
 let x;
 let y;
-let dx = 1;
+let dx = 5;
+let bg;
 
 function preload(){
   canoe = loadImage("assets/canoe.jpg");
@@ -18,7 +18,6 @@ function preload(){
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background("blue");
   x = width / 2;
   y = height / 2;
 }
@@ -31,16 +30,19 @@ function draw() {
   
   x += dx;
 
-  if (mouseX > x && mouseX < 1200){
+  if (mouseX > x){
     dx = 5;
   }
 
-  else if (mouseX < x && mouseX > 400){
+  else if (mouseX < x){
     dx = -5;
   }
 
-  else if (mouseX === x){
+  if (x >= 1200){
     dx = 0;
-  }
+
+  }   
 
 }
+
+
