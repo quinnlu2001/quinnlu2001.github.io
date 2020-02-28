@@ -12,7 +12,7 @@ let dx = 5;
 let bg;
 
 function preload(){
-  canoe = loadImage("assets/canoe.jpg");
+  canoe = loadImage("assets/canoe.png");
   bg = loadImage("assets/blue.png");
 }
 
@@ -38,11 +38,19 @@ function draw() {
     dx = -5;
   }
 
-  if (x >= 1200){
+  // if (Math.abs.mouseX - x !== 5){
+  //   dx = Math.abs.mouseX - x;
+  // }
+  
+  if (x > 1200){
     dx = 0;
+    x = 1200;
+  }
 
-  }   
-
-}
+  if (x < 400){
+    dx = 0;
+    x = 400;
+  }
+}   
 
 
