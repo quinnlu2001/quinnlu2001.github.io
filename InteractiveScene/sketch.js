@@ -34,14 +34,14 @@ function draw() {
     dx = 5;
   }
 
-  else if (mouseX < x){
+  if (mouseX < x){
     dx = -5;
   }
 
-  // if (Math.abs.mouseX - x !== 5){
-  //   dx = Math.abs.mouseX - x;
-  // }
-  
+  else if (mouseX - x < dx){
+    dx = 0;
+  }
+
   if (x > 1200){
     dx = 0;
     x = 1200;
