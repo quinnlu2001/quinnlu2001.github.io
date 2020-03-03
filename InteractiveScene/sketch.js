@@ -5,15 +5,22 @@
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
 
+let bg;
 let canoe;
+let rock;
+
 let x;
 let y;
 let dx = 5;
-let bg;
+
+let rockX;
+let rockY;
+let dRock;
 
 function preload(){
   canoe = loadImage("assets/canoe.png");
   bg = loadImage("assets/blue.png");
+  rock = loadImage("assets/rock.png");
 }
 
 function setup() {
@@ -24,9 +31,13 @@ function setup() {
 
 function draw() {
   console.log(dx, x, mouseX);
+  
   background(220);
+  
   image(bg,400,0,800,800);
   image(canoe, x-50, y-100, 100, 200);
+  
+  createRock();
   
   x += dx;
 
@@ -53,4 +64,11 @@ function draw() {
   }
 }   
 
+function createRock(){
+  rockX = random(400,1200);
+  rockY = 0;
+  image(rock,rockX,rockY,100,100);
+  
+  
+}
 
