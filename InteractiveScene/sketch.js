@@ -30,7 +30,7 @@ function setup() {
 }
 
 function draw() {
-  console.log(dx, x, mouseX);
+  console.log(dx, x, mouseX,mouseY);
   
   background(220);
   
@@ -62,13 +62,15 @@ function draw() {
     dx = 0;
     x = 400;
   }
-}   
+}
 
 function createRock(){
   rockX = random(400,1200);
   rockY = 0;
   image(rock,rockX,rockY,100,100);
-  
-  
 }
 
+function drawRock(){
+  image(rock,rockX,rockY,100,100);
+  rockY -= 10;
+}
