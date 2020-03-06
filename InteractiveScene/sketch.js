@@ -12,6 +12,7 @@ let rock;
 let x;
 let y;
 let dx = 5;
+let dy = 40;
 
 let rockX;
 let rockY;
@@ -27,6 +28,9 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   x = width / 2;
   y = height / 2;
+
+  rockX = random(500,1100);
+  rockY = 0;
 }
 
 function draw() {
@@ -65,12 +69,16 @@ function draw() {
 }
 
 function createRock(){
-  rockX = random(400,1200);
-  rockY = 0;
   image(rock,rockX,rockY,100,100);
+  rockY += dy;
+ 
+  if (rockY > windowHeight){
+    rockY = -10;
+    rockX = random(500,1100);
+  }
 }
 
-function drawRock(){
-  image(rock,rockX,rockY,100,100);
-  rockY -= 10;
-}
+// function drawRock(){
+//   image(rock,rockX,rockY,100,100);
+//   rockY -= 10;
+// }
