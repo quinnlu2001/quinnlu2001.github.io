@@ -1,6 +1,6 @@
 // Canoe
 // Quinn Lu
-// XXX XX, 2020
+// Mar XX, 2020
 //
 // Extra for Experts:
 // - describe what you did to take this project "above and beyond"
@@ -12,11 +12,13 @@ let rock;
 let x;
 let y;
 let dx = 5;
-let dy = 40;
+let dy = 10;
 
 let rockX;
 let rockY;
 let dRock;
+
+let hit = false;
 
 function preload(){
   canoe = loadImage("assets/canoe.png");
@@ -34,7 +36,7 @@ function setup() {
 }
 
 function draw() {
-  console.log(dx, x, mouseX,mouseY);
+  console.log(dx, x, mouseX,mouseY,hit);
   
   background(220);
   
@@ -42,30 +44,29 @@ function draw() {
   image(canoe, x-50, y-100, 100, 200);
   
   createRock();
+  detect();
   
   x += dx;
 
   if (mouseX > x){
     dx = 5;
   }
-
   if (mouseX < x){
     dx = -5;
   }
-
   else if (mouseX - x < dx){
     dx = 0;
   }
-
   if (x > 1200){
     dx = 0;
     x = 1200;
   }
-
   if (x < 400){
     dx = 0;
     x = 400;
   }
+  
+  hit = collideRectRect(x-50,y-100,100,200,rockX,rockY,100,100);
 }
 
 function createRock(){
@@ -78,7 +79,9 @@ function createRock(){
   }
 }
 
-// function drawRock(){
-//   image(rock,rockX,rockY,100,100);
-//   rockY -= 10;
-// }
+function detect(){
+  if (hit){
+    text("bruh",windowWidth/2, windowHeight/2);
+  }
+}
+
